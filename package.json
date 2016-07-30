@@ -1,0 +1,24 @@
+{
+  "name": "chinese-to-pinyin",
+  "version": "0.0.1",
+  "description": "一个将中文翻译成拼音的库",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhujun24/chinese-to-pinyin.git"
+  },
+  "keywords": [
+    "Pinyin",
+    "Chinese",
+    "Chinese-to-pinyin"
+  ],
+  "author": "zhujun24",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhujun24/chinese-to-pinyin/issues"
+  },
+  "homepage": "https://github.com/zhujun24/chinese-to-pinyin#readme"
+}
