@@ -29,7 +29,8 @@
 		"no-param-reassign": 0,
 		"comma-dangle": 0,
 		"object-curly-spacing": 0,
-		"prefer-arrow-callback": 1
+		"prefer-arrow-callback": 1,
+		"quote-props": 0
 		//    "func-names": 0,
 		//    "no-constant-condition": 1,
 		//    "no-dupe-keys": 1,
