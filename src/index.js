@@ -76,7 +76,4 @@ const convert = (str, options) => {
   return str;
 };
 
-export default convert;
-
-// console.log(convert('我但是abc发挥技术22', {numberTone: '1'}));
-
+module.exports = convert;

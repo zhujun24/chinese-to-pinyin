@@ -1,6 +1,6 @@
 {
   "name": "chinese-to-pinyin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "一个将中文翻译成拼音的库",
   "main": "index.js",
   "repository": {
@@ -13,7 +13,7 @@
     "Chinese-to-Pinyin"
   ],
   "author": "zhujun24",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zhujun24/chinese-to-pinyin/issues"
   },

@@ -1,1 +1,28 @@
-## 一个将中文翻译成拼音的库
+# Chinese-to-Pinyin [![npm package](https://img.shields.io/npm/v/chinese-to-pinyin.svg?style=flat-square)](https://www.npmjs.org/package/antd) [![NPM downloads](https://img.shields.io/npm/dm/chinese-to-pinyin.svg?style=flat-square)](https://npmjs.org/package/antd) [![Dependency Status](https://david-dm.org/zhujun24/chinese-to-pinyin.svg?style=flat-square)](https://david-dm.org/ant-design/ant-design)
+
+一个将中文翻译成拼音的库
+
+## 安装
+
+```bash
+npm install chinese-to-pinyin
+```
+
+## 示例
+
+```js
+var pinyin = require("chinese-to-pinyin");
+pinyin('今天天气真好'); // jīn tiān tiān qì zhēn hǎo
+```
+
+## 略去声调
+```js
+var pinyin = require("chinese-to-pinyin");
+pinyin('今天天气真好', {noTone: true}); // jin tian tian qi zhen hao
+```
+
+## 声调转数字
+```js
+var pinyin = require("chinese-to-pinyin");
+pinyin('今天天气真好', {numberTone: true}); // jin1 tian1 tian1 qi4 zhen1 hao3
+```
