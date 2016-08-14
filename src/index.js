@@ -47,21 +47,23 @@ let numberTone = (str) => {
 const convert = (str, options) => {
   options = options || {};
 
-  str = str.match(/[\u4E00-\u9FA5]*/g).join('');
+  let chn = str.match(/[\u4E00-\u9FA5]*/g).join('');
+  let chinese = chn;
+  let fullLength = str.length;
 
   let i = 0;
   let lens = dictionarys.length;
   for (; i < lens; i++) {
     let complete = false;
     for (let key of Object.keys(dictionarys[i])) {
-      if (str.indexOf(key) !== -1) {
-        str = str.replace(new RegExp(key, 'g'), dictionarys[i][key]);
-        if (!reg.test(str)) {
-          str = str.replace(/ /, '');
+      if (chn.indexOf(key) !== -1) {
+        chn = chn.replace(new RegExp(key, 'g'), dictionarys[i][key]);
+        if (!reg.test(chn)) {
+          chn = chn.replace(/ /, '');
           if (options.numberTone) {
-            str = numberTone(str);
+            chn = numberTone(chn);
           } else if (options.noTone) {
-            str = noTone(str);
+            chn = noTone(chn);
           }
           complete = true;
           break;
@@ -73,7 +75,38 @@ const convert = (str, options) => {
       break;
     }
   }
-  return str;
+  if (options.filterChinese) {
+    i = 1;
+    let otherArr = [];
+    let newChn = `k${chinese}`;
+    let fullLen = newChn.length;
+    str = `k${str}`;
+    for (; i < fullLen; i++) {
+      let splitReg = new RegExp(`${newChn[i - 1]}.*?${newChn[i]}`);
+      let result = str.match(splitReg);
+      if (result) {
+        result = result[0];
+        let len = result.length;
+        otherArr.push(result.substr(1, len - 2));
+        str = str.substr(result.length - 1, fullLength);
+      }
+    }
+    otherArr.push(str.substr(1, fullLength + 1));
+    let res = '';
+    chn = chn.split(' ');
+    otherArr.forEach((val, index) => {
+      if (val) {
+        otherArr[index] = `${val} `;
+      }
+      if (index === fullLen - 1) {
+        res += otherArr[index];
+      } else {
+        res += `${otherArr[index]}${chn[index]} `;
+      }
+    });
+    return res;
+  }
+  return chn;
 };
 
 module.exports = convert;

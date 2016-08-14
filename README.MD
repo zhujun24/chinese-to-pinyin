@@ -26,3 +26,9 @@ pinyin('今天天气真好', {noTone: true}); // jin tian tian qi zhen hao
 var pinyin = require("chinese-to-pinyin");
 pinyin('今天天气真好', {numberTone: true}); // jin1 tian1 tian1 qi4 zhen1 hao3
 ```
+
+## 不忽略非中文字符
+```js
+var pinyin = require("chinese-to-pinyin");
+pinyin('1今a天bb天ccc气dd dd真e好fff', {filterChinese: true}); // 1 jīn a tiān bb tiān ccc qì dd dd zhēn e hǎo fff
+```
