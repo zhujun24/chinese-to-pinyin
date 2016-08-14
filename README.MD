@@ -3,13 +3,17 @@
 一个将中文翻译成拼音的库
 
 ## 安装
-
 ```bash
 npm install chinese-to-pinyin
 ```
 
-## 示例
+## 提示
+clone 至本地调试代码的时候建议开启 grunt 以便监听改动实时编译
+```bash
+grunt
+```
 
+## 示例
 ```js
 var pinyin = require("chinese-to-pinyin");
 pinyin('今天天气真好'); // jīn tiān tiān qì zhēn hǎo
