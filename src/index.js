@@ -104,9 +104,9 @@ const convert = (str, options) => {
         res += `${otherArr[index]}${chn[index]} `;
       }
     });
-    return res;
+    chn = res;
   }
-  return chn;
+  return chn.trim();
 };
 
 module.exports = convert;
