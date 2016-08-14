@@ -48,8 +48,6 @@ const convert = (str, options) => {
   options = options || {};
 
   let chn = str.match(/[\u4E00-\u9FA5]*/g).join('');
-  let chinese = chn;
-  let fullLength = str.length;
 
   let i = 0;
   let lens = dictionarys.length;
@@ -76,32 +74,39 @@ const convert = (str, options) => {
     }
   }
   if (options.filterChinese) {
-    i = 1;
-    let otherArr = [];
-    let newChn = `k${chinese}`;
-    let fullLen = newChn.length;
-    str = `k${str}`;
-    for (; i < fullLen; i++) {
-      let splitReg = new RegExp(`${newChn[i - 1]}.*?${newChn[i]}`);
-      let result = str.match(splitReg);
-      if (result) {
-        result = result[0];
-        let len = result.length;
-        otherArr.push(result.substr(1, len - 2));
-        str = str.substr(result.length - 1, fullLength);
+    chn = chn.split(' ');
+    let otherArr = ['']; // 特殊字符映射
+    let preIsChinese = false;
+    let len = str.length;
+    for (i = 0; i < len; i++) {
+      if (!reg.test(str[i])) {
+        // 非汉字字符
+        if (preIsChinese) {
+          otherArr[otherArr.length] = str[i];
+        } else {
+          otherArr[otherArr.length - 1] += str[i];
+        }
+        preIsChinese = false;
+      } else {
+        // 汉字
+        otherArr.push('');
+        preIsChinese = true;
       }
     }
-    otherArr.push(str.substr(1, fullLength + 1));
     let res = '';
-    chn = chn.split(' ');
+    if (otherArr[0]) {
+      res = `${otherArr[0]} `;
+    }
+
+    let k = 0;
     otherArr.forEach((val, index) => {
-      if (val) {
-        otherArr[index] = `${val} `;
-      }
-      if (index === fullLen - 1) {
-        res += otherArr[index];
-      } else {
-        res += `${otherArr[index]}${chn[index]} `;
+      if (index !== 0) {
+        if (val) {
+          res += `${val} `;
+        } else {
+          res += `${chn[k]} `;
+          k++;
+        }
       }
     });
     chn = res;
