@@ -1,6 +1,6 @@
 # Chinese-to-Pinyin [![npm package](https://img.shields.io/npm/v/chinese-to-pinyin.svg?style=flat-square)](https://www.npmjs.org/package/chinese-to-pinyin) [![NPM downloads](https://img.shields.io/npm/dm/chinese-to-pinyin.svg?style=flat-square)](https://npmjs.org/package/chinese-to-pinyin) [![Dependency Status](https://david-dm.org/zhujun24/chinese-to-pinyin.svg?style=flat-square)](https://david-dm.org/zhujun24/chinese-to-pinyin)
 
-一个将中文翻译成拼音的库
+一个将中文翻译成拼音的库,支持多音字
 
 ## 安装
 ```bash
@@ -17,6 +17,12 @@ grunt
 ```js
 var pinyin = require("chinese-to-pinyin");
 pinyin('今天天气真好'); // jīn tiān tiān qì zhēn hǎo
+```
+
+## 支持多音字
+```js
+var pinyin = require("chinese-to-pinyin");
+pinyin('蚌埠六安哪吒都灵'); // bèng bù lù ān né zhā dū líng
 ```
 
 ## 略去声调
