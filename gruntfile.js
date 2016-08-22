@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 					{
 						expand: true,
 						cwd: '',
-						src: ['src/*.js'],
+						src: ['src/*.js', 'dictionary/*.js'],
 						dest: 'dist/',
 						ext: '.js'
 					}
@@ -22,7 +22,7 @@ module.exports = function (grunt) {
 		},
 		watch: {
 			node: {
-				files: ['*.js', 'src/*.js'],
+				files: ['*.js', 'src/*.js', 'dictionary/*.js'],
 				options: {
 					event: ['changed', 'added', 'deleted']
 				},
