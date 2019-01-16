@@ -5,7 +5,7 @@ import dictionary4 from '../dictionary/dictionary_4';
 import dictionary5 from '../dictionary/dictionary_5';
 import dictionary6 from '../dictionary/dictionary_6';
 import surnames from '../dictionary/surnames';
-import tone from './tone';
+import tones from './tones';
 
 const reg = new RegExp(/[\u4E00-\u9FA5]/);
 
@@ -19,26 +19,30 @@ let dictionarys = [dictionary1,
 ];
 
 let noTone = (str) => {
-  Object.keys(tone).forEach((key) => {
+  Object.keys(tones).forEach((key) => {
     if (str.indexOf(key) !== -1) {
-      str = str.replace(new RegExp(key, 'g'), tone[key][0]);
+      str = str.replace(new RegExp(key, 'g'), tones[key][0]);
     }
   });
   return str;
 };
 
-let numberTone = (str) => {
+let numberTone = (str, numberToneOnly) => {
   let strs = str.split(' ');
   strs.forEach((val, index) => {
-    let thisKey = null;
-
-    Object.keys(tone).forEach((key) => {
+    let thisKey = 0;
+    Object.keys(tones).forEach((key) => {
       if (val.indexOf(key) !== -1) {
         thisKey = key;
-        strs[index] = val.replace(new RegExp(key, 'g'), tone[key][0]);
+        strs[index] = val.replace(new RegExp(key, 'g'), tones[key][0]);
       }
     });
-    strs[index] += tone[thisKey][1];
+    const tone = thisKey && tones[thisKey][1];
+    if (numberToneOnly) {
+      strs[index] = tone;
+    } else {
+      strs[index] += tone;
+    }
   });
 
   return strs.join(' ');
@@ -59,7 +63,7 @@ const convert = (str, options) => {
         if (!reg.test(chn)) {
           chn = chn.replace(/ /, '');
           if (options.numberTone) {
-            chn = numberTone(chn);
+            chn = numberTone(chn, options.numberToneOnly);
           } else if (options.noTone) {
             chn = noTone(chn);
           }
