@@ -41,7 +41,7 @@ pinyin('今天天气真好', {numberTone: true}); // jin1 tian1 tian1 qi4 zhen1 
 
 ## 声调转数字,只输出音调
 ```js
-pinyin('今天天气真好', {numberTone: true, numberToneOnly: true}); // 1 1 1 4 1 3
+pinyin('今天天气真好', {numberToneOnly: true}); // 1 1 1 4 1 3
 ```
 
 ## 不忽略非中文字符

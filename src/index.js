@@ -27,7 +27,7 @@ let noTone = (str) => {
   return str;
 };
 
-let numberTone = (str, numberToneOnly) => {
+let toneToNumber = (str, numberToneOnly) => {
   let strs = str.split(' ');
   strs.forEach((val, index) => {
     let thisKey = 0;
@@ -62,8 +62,8 @@ const convert = (str, options) => {
         chn = chn.replace(new RegExp(key, 'g'), dictionarys[i][key]);
         if (!reg.test(chn)) {
           chn = chn.replace(/ /, '');
-          if (options.numberTone) {
-            chn = numberTone(chn, options.numberToneOnly);
+          if (options.numberTone || options.numberToneOnly) {
+            chn = toneToNumber(chn, options.numberToneOnly);
           } else if (options.noTone) {
             chn = noTone(chn);
           }

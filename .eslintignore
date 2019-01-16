@@ -1,5 +1,4 @@
 dictionary/
 node_modules/
 dist/
-gruntfile.js
 test/

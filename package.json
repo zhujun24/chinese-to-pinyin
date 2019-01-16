@@ -1,6 +1,6 @@
 {
   "name": "chinese-to-pinyin",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "一个将中文翻译成拼音的库,支持多音字",
   "main": "index.js",
   "repository": {
@@ -42,7 +42,8 @@
   "scripts": {
     "start": "node index.js",
     "test": "mocha test/index",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "fix": "eslint . --fix"
   },
   "pre-commit": [
     "lint"
