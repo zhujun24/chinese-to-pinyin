@@ -55,7 +55,7 @@ const convert = (str, options) => {
 
   let i = 0;
   let lens = dictionarys.length;
-  for (; i < lens; i++) {
+  for (; i < lens; i += 1) {
     let complete = false;
     for (let key of Object.keys(dictionarys[i])) {
       if (chn.indexOf(key) !== -1) {
@@ -82,7 +82,7 @@ const convert = (str, options) => {
     let otherArr = ['']; // 特殊字符映射
     let preIsChinese = false;
     let len = str.length;
-    for (i = 0; i < len; i++) {
+    for (i = 0; i < len; i += 1) {
       if (!reg.test(str[i])) {
         // 非汉字字符
         if (preIsChinese) {
@@ -109,7 +109,7 @@ const convert = (str, options) => {
           res += `${val} `;
         } else {
           res += `${chn[k]} `;
-          k++;
+          k += 1;
         }
       }
     });
