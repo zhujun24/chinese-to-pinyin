@@ -1,8 +1,11 @@
 {
   "name": "chinese-to-pinyin",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "一个将中文翻译成拼音的库,支持多音字",
   "main": "index.js",
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/zhujun24/chinese-to-pinyin.git"
