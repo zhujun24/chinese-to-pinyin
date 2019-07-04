@@ -40,20 +40,20 @@ pinyin('蚌埠六安哪吒都灵'); // bèng bù lù ān né zhā dū líng
 
 ## 略去声调
 ```js
-pinyin('今天天气真好', {noTone: true}); // jin tian tian qi zhen hao
+pinyin('今天天气真好', {removeTone: true}); // jin tian tian qi zhen hao
 ```
 
 ## 声调转数字
 ```js
-pinyin('今天天气真好', {numberTone: true}); // jin1 tian1 tian1 qi4 zhen1 hao3
+pinyin('今天天气真好', {toneToNumber: true}); // jin1 tian1 tian1 qi4 zhen1 hao3
 ```
 
 ## 声调转数字,只输出音调
 ```js
-pinyin('今天天气真好', {numberToneOnly: true}); // 1 1 1 4 1 3
+pinyin('今天天气真好', {toneToNumberOnly: true}); // 1 1 1 4 1 3
 ```
 
-## 不忽略非中文字符
+## 保留未翻译的非中文字符
 ```js
-pinyin('1今a天bb天ccc气dd dd真e好fff', {filterChinese: true}); // 1 jīn a tiān bb tiān ccc qì dd dd zhēn e hǎo fff
+pinyin('1今a天bb天ccc气dd dd真e好fff', {keepRest: true}); // 1 jīn a tiān bb tiān ccc qì dd dd zhēn e hǎo fff
 ```

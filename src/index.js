@@ -5,9 +5,9 @@ import dictionary4 from './dictionary/dictionary_4'
 import dictionary5 from './dictionary/dictionary_5'
 import dictionary6 from './dictionary/dictionary_6'
 import surnames from './dictionary/surnames'
-import tones from './tones'
+import { removeTone, convertToneToNumber } from './utils'
 
-const reg = new RegExp(/[\u4E00-\u9FA5]/)
+const REGEXP = /[\u4E00-\u9FA5]/g
 
 const dictionarys = [
   dictionary1,
@@ -19,55 +19,17 @@ const dictionarys = [
   surnames
 ]
 
-const noTone = (str) => {
-  Object.keys(tones).forEach((key) => {
-    if (str.indexOf(key) !== -1) {
-      str = str.replace(new RegExp(key, 'g'), tones[key][0])
-    }
-  })
-  return str
-}
-
-let toneToNumber = (str, numberToneOnly) => {
-  let strs = str.split(' ')
-  strs.forEach((val, index) => {
-    let thisKey = 0
-    Object.keys(tones).forEach((key) => {
-      if (val.indexOf(key) !== -1) {
-        thisKey = key
-        strs[index] = val.replace(new RegExp(key, 'g'), tones[key][0])
-      }
-    })
-    const tone = thisKey && tones[thisKey][1]
-    if (numberToneOnly) {
-      strs[index] = tone
-    } else {
-      strs[index] += tone
-    }
-  })
-
-  return strs.join(' ')
-}
-
-export default (str, options) => {
-  options = options || {}
-
-  let chn = str.match(/[\u4E00-\u9FA5]*/g).join('')
+export default (str, options = {}) => {
+  let result = str.match(REGEXP).join('')
 
   let i = 0
   let lens = dictionarys.length
   for (; i < lens; i += 1) {
     let complete = false
     for (let key of Object.keys(dictionarys[i])) {
-      if (chn.indexOf(key) !== -1) {
-        chn = chn.replace(new RegExp(key, 'g'), dictionarys[i][key])
-        if (!reg.test(chn)) {
-          chn = chn.replace(/ /, '')
-          if (options.numberTone || options.numberToneOnly) {
-            chn = toneToNumber(chn, options.numberToneOnly)
-          } else if (options.noTone) {
-            chn = noTone(chn)
-          }
+      if (~result.indexOf(key)) {
+        result = result.replace(new RegExp(key, 'g'), dictionarys[i][key])
+        if (!REGEXP.test(result)) {
           complete = true
           break
         }
@@ -78,43 +40,19 @@ export default (str, options) => {
       break
     }
   }
-  if (options.filterChinese) {
-    chn = chn.split(' ')
-    let otherArr = [''] // 特殊字符映射
-    let preIsChinese = false
-    let len = str.length
-    for (i = 0; i < len; i += 1) {
-      if (!reg.test(str[i])) {
-        // 非汉字字符
-        if (preIsChinese) {
-          otherArr[otherArr.length] = str[i]
-        } else {
-          otherArr[otherArr.length - 1] += str[i]
-        }
-        preIsChinese = false
-      } else {
-        // 汉字
-        otherArr.push('')
-        preIsChinese = true
-      }
-    }
-    let res = ''
-    if (otherArr[0]) {
-      res = `${otherArr[0]} `
-    }
 
-    let k = 0
-    otherArr.forEach((val, index) => {
-      if (index !== 0) {
-        if (val) {
-          res += `${val} `
-        } else {
-          res += `${chn[k]} `
-          k += 1
-        }
-      }
-    })
-    chn = res
+  result = result.trim()
+
+  if (options.toneToNumber || options.toneToNumberOnly) {
+    result = convertToneToNumber(result, options.toneToNumberOnly)
+  } else if (options.removeTone) {
+    result = removeTone(result)
   }
-  return chn.trim()
+
+  if (options.keepRest) {
+    result = result.split(' ')
+    result = str.replace(REGEXP, () => ` ${result.shift()} `)
+  }
+
+  return result
 }
