@@ -1,6 +1,6 @@
 {
   "name": "chinese-to-pinyin",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "一个将中文翻译成拼音的库,支持多音字",
   "main": "index.js",
   "repository": {
@@ -19,33 +19,22 @@
     "url": "https://github.com/zhujun24/chinese-to-pinyin/issues"
   },
   "homepage": "https://github.com/zhujun24/chinese-to-pinyin#readme",
-  "devDependencies": {
-    "babel-eslint": "^10.0.2",
-    "babel-plugin-transform-async-to-generator": "^6.8.0",
-    "babel-polyfill": "^6.9.1",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-stage-0": "^6.5.0",
-    "chai": "^3.5.0",
-    "eslint": "^6.0.1",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-import": "^2.18.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-react": "^7.14.2",
-    "grunt": "^1.0.1",
-    "grunt-babel": "^6.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-eslint": "^19.0.0",
-    "load-grunt-tasks": "^3.5.0",
-    "mocha": "^3.0.2",
-    "pre-commit": "^1.1.3"
-  },
   "scripts": {
-    "start": "node index.js",
-    "test": "mocha test/index",
-    "lint": "eslint .",
-    "fix": "eslint . --fix"
+    "start": "webpack --watch",
+    "build": "rm -rf dist && webpack --mode production",
+    "lint": "standard \"./src/**/*.js\"",
+    "fix": "standard \"./src/**/*.js\" --fix",
+    "test": "mocha test/index"
   },
   "pre-commit": [
     "lint"
-  ]
+  ],
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.1.4",
+    "pre-commit": "^1.2.2",
+    "standard": "^12.0.1",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5"
+  }
 }

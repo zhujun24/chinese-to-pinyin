@@ -7,10 +7,19 @@
 npm install chinese-to-pinyin
 ```
 
-## 提示
-clone 至本地调试代码的时候建议开启 grunt 以便监听改动实时编译
+## 开发
 ```bash
-grunt
+npm start
+```
+
+## 测试
+```bash
+npm test
+```
+
+## 编译
+```bash
+npm run build
 ```
 
 ## 使用

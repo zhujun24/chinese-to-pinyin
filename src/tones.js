@@ -1,4 +1,4 @@
-const DICTIONARY = {
+export default {
   'üē': ['ue', 1],
   'üé': ['ue', 2],
   'üě': ['ue', 3],
@@ -27,6 +27,4 @@ const DICTIONARY = {
   'ò': ['o', 4],
   'ù': ['u', 4],
   'ǜ': ['v', 4]
-};
-
-export default DICTIONARY;
+}
