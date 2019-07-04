@@ -10,7 +10,7 @@ export default (str, options = {}) => {
 
   for (let key of keys) {
     if (~result.indexOf(key)) {
-      result = result.replace(new RegExp(key, 'g'), dictionary[key])
+      result = result.replace(new RegExp(key, 'g'), ` ${dictionary[key]}`)
       if (!REGEXP.test(result)) {
         break
       }

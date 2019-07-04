@@ -1,6 +1,6 @@
 {
   "name": "chinese-to-pinyin",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "一个将中文翻译成拼音的库,支持多音字",
   "main": "index.js",
   "files": [
