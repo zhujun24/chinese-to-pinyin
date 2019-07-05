@@ -27,15 +27,27 @@
     "build": "rm -rf dist && webpack --mode production",
     "lint": "standard \"./src/**/*.js\"",
     "fix": "standard \"./src/**/*.js\" --fix",
-    "test": "mocha test/index"
+    "test": "mocha test/index",
+    "coverage": "nyc --reporter=text --reporter=lcov npm test"
   },
   "pre-commit": [
+    "lint",
     "test",
-    "lint"
+    "coverage"
   ],
+  "nyc": {
+    "all": true,
+    "exclude": [
+      "src/**/*.js"
+    ],
+    "include": [
+      "dist/*.js"
+    ]
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.1.4",
+    "nyc": "^14.1.1",
     "pre-commit": "^1.2.2",
     "standard": "^12.0.1",
     "webpack": "^4.35.2",
