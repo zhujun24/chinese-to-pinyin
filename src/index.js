@@ -11,6 +11,7 @@ export default (str, options = {}) => {
   for (let key of keys) {
     if (~result.indexOf(key)) {
       result = result.replace(new RegExp(key, 'g'), ` ${dictionary[key]}`)
+      REGEXP.lastIndex = 0
       if (!REGEXP.test(result)) {
         break
       }
