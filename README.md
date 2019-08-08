@@ -1,6 +1,10 @@
-# Chinese-to-Pinyin [![npm package](https://img.shields.io/npm/v/chinese-to-pinyin.svg?style=flat-square)](https://www.npmjs.org/package/chinese-to-pinyin) [![NPM downloads](https://img.shields.io/npm/dm/chinese-to-pinyin.svg?style=flat-square)](https://npmjs.org/package/chinese-to-pinyin) [![Dependency Status](https://david-dm.org/zhujun24/chinese-to-pinyin.svg?style=flat-square)](https://david-dm.org/zhujun24/chinese-to-pinyin)
+# Chinese-to-Pinyin - 一个将中文翻译成拼音的库,支持多音字
 
-一个将中文翻译成拼音的库,支持多音字
+[![npm package](https://nodei.co/npm/chinese-to-pinyin.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/request/)
+
+[![npm package](https://img.shields.io/npm/v/chinese-to-pinyin.svg?style=flat-square)](https://www.npmjs.org/package/chinese-to-pinyin)
+[![NPM downloads](https://img.shields.io/npm/dm/chinese-to-pinyin.svg?style=flat-square)](https://npmjs.org/package/chinese-to-pinyin)
+[![Dependency Status](https://david-dm.org/zhujun24/chinese-to-pinyin.svg?style=flat-square)](https://david-dm.org/zhujun24/chinese-to-pinyin)
 
 ## 安装
 ```bash
