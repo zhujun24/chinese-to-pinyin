@@ -10,7 +10,7 @@ export default (str, options = {}) => {
 
   for (let key of keys) {
     if (~result.indexOf(key)) {
-      result = result.replace(new RegExp(key, 'g'), ` ${dictionary[key]}`)
+      result = result.replace(new RegExp(key, 'g'), ` ${options.firstCharacter ? dictionary[key].substring(0, 1) : dictionary[key]}`)
       REGEXP.lastIndex = 0
       if (!REGEXP.test(result)) {
         break
@@ -29,13 +29,6 @@ export default (str, options = {}) => {
   if (options.keepRest) {
     result = result.split(' ')
     result = str.replace(REGEXP, () => ` ${result.shift()} `)
-  }
-
-  // feat:add firstCharacter option
-  if (options.firstCharacter) {
-    result = result.split(' ').reduce((pre, cur) => {
-      return pre + cur.substring(0, 1)
-    }, '')
   }
 
   return result
