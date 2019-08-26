@@ -61,3 +61,12 @@ pinyin('今天天气真好', {toneToNumberOnly: true}); // 1 1 1 4 1 3
 ```js
 pinyin('1今a天bb天ccc气dd dd真e好fff', {keepRest: true}); // 1 jīn a tiān bb tiān ccc qì dd dd zhēn e hǎo fff
 ```
+
+## 获取中文首字母
+```js
+pinyin('今天天气真好', { firstCharacter: true }); // j t t q z h
+// 获取中文首字母时，保留未翻译的非中文字符
+pinyin('1今2天3天4气5真6好aaa', { keepRest: true, firstCharacter: true }); // 1 j 2 t 3 t 4 q 5 z 6 h aaa
+// 获取中文首字母时，不保留未翻译的非中文字符
+pinyin('1今2天3天4气5真6好aaa', { firstCharacter: true }); // j t t q z h
+```
