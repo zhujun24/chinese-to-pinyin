@@ -20,13 +20,7 @@ describe('中文转拼音测试', () => {
   it('获取汉字的首字母(忽略非中文字符)', () => {
     expect(pinyin('今天天气真好', { firstCharacter: true })).to.equal('jttqzh')
   })
-  it('获取汉字的首字母(忽略非中文字符,大写)', () => {
-    expect(pinyin('今天天气真好', { firstCharacter: true, toUpperCase: true })).to.equal('JTTQZH')
-  })
   it('获取汉字的首字母(不忽略非中文字符)', () => {
     expect(pinyin('1今2天3天4气5真6好', { keepRest: true, firstCharacter: true })).to.equal('1j2t3t4q5z6h')
-  })
-  it('获取汉字的首字母(不忽略非中文字符,大写)', () => {
-    expect(pinyin('1今2天3天4气5真6好', { keepRest: true, firstCharacter: true, toUpperCase: true })).to.equal('1J2T3T4Q5Z6H')
   })
 })
