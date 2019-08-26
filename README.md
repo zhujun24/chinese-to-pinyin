@@ -61,3 +61,10 @@ pinyin('今天天气真好', {toneToNumberOnly: true}); // 1 1 1 4 1 3
 ```js
 pinyin('1今a天bb天ccc气dd dd真e好fff', {keepRest: true}); // 1 jīn a tiān bb tiān ccc qì dd dd zhēn e hǎo fff
 ```
+
+## 获取中文首字母
+```js
+pinyin('今天天气真好', { firstCharacter: true }); // jttqzh
+// UpperCase
+pinyin('今天天气真好', { firstCharacter: true, toUpperCase: true }); // JTTQZH
+```

@@ -31,5 +31,18 @@ export default (str, options = {}) => {
     result = str.replace(REGEXP, () => ` ${result.shift()} `)
   }
 
+  // feat:add firstCharacter option
+  if (options.firstCharacter) {
+    result = result.split(' ').reduce((pre, cur) => {
+      return pre + cur.substring(0, 1)
+    }, '')
+
+    if (options.toUpperCase) {
+      result = result.toUpperCase()
+    } else {
+      result = result.toLowerCase()
+    }
+  }
+
   return result
 }
