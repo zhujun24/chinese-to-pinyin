@@ -6,7 +6,12 @@ const REGEXP = /[\u4E00-\u9FA5]/g
 const keys = Object.keys(dictionary)
 
 export default (str, options = {}) => {
-  let result = str.match(REGEXP).join('')
+  const temp = str.match(REGEXP)
+  if (temp === null) {
+    return str
+  }
+
+  let result = temp.join('')
 
   for (let key of keys) {
     if (~result.indexOf(key)) {
