@@ -7,7 +7,7 @@ const keys = Object.keys(dictionary)
 
 export default (str, options = {}) => {
   const temp = str.match(REGEXP)
-  if (temp === null) {
+  if (!temp) {
     return str
   }
 
