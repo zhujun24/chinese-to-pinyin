@@ -2,6 +2,9 @@ const expect = require('chai').expect
 const pinyin = require('../')
 
 describe('中文转拼音测试', () => {
+  it('无汉字', () => {
+    expect(pinyin('Kevin Xiao')).to.equal('Kevin Xiao')
+  })
   it('默认翻译', () => {
     expect(pinyin('今天天气真好')).to.equal('jīn tiān tiān qì zhēn hǎo')
   })
