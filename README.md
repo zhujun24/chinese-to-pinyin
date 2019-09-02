@@ -2,13 +2,18 @@
 
 [![npm package](https://nodei.co/npm/chinese-to-pinyin.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/request/)
 
-[![npm package](https://img.shields.io/npm/v/chinese-to-pinyin.svg?style=flat-square)](https://www.npmjs.org/package/chinese-to-pinyin)
-[![NPM downloads](https://img.shields.io/npm/dm/chinese-to-pinyin.svg?style=flat-square)](https://npmjs.org/package/chinese-to-pinyin)
-[![Dependency Status](https://david-dm.org/zhujun24/chinese-to-pinyin.svg?style=flat-square)](https://david-dm.org/zhujun24/chinese-to-pinyin)
+[![Build Status](https://travis-ci.org/zhujun24/chinese-to-pinyin.svg)](https://travis-ci.org/zhujun24/chinese-to-pinyin)
+[![Coverage Status](https://coveralls.io/repos/github/zhujun24/chinese-to-pinyin/badge.svg)](https://coveralls.io/github/zhujun24/chinese-to-pinyin)
+[![npm package](https://img.shields.io/npm/v/chinese-to-pinyin.svg)](https://www.npmjs.com/package/chinese-to-pinyin)
+[![NPM downloads](https://img.shields.io/npm/dm/chinese-to-pinyin.svg)](https://www.npmjs.com/package/chinese-to-pinyin)
+[![Dependency Status](https://david-dm.org/zhujun24/chinese-to-pinyin.svg)](https://www.npmjs.com/package/chinese-to-pinyin)
+[![Dependency Status](https://david-dm.org/zhujun24/chinese-to-pinyin/dev-status.svg)](https://www.npmjs.com/package/chinese-to-pinyin)
+[![Standard - JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://www.npmjs.com/package/chinese-to-pinyin)
+
 
 ## 安装
 ```bash
-npm install chinese-to-pinyin
+npm install chinese-to-pinyin --save
 ```
 
 ## 开发
