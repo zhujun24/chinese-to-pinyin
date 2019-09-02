@@ -10,7 +10,7 @@ export const removeTone = str => {
 }
 
 export const convertToneToNumber = (str, toneToNumberOnly) => {
-  let result = str.split(' ')
+  const result = str.split(' ')
   result.forEach((val, index) => {
     let thisKey = 0
     Object.keys(tones).forEach(key => {

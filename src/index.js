@@ -13,7 +13,7 @@ export default (str, options = {}) => {
 
   result = result.join('')
 
-  for (let key of keys) {
+  for (const key of keys) {
     if (~result.indexOf(key)) {
       result = result.replace(new RegExp(key, 'g'), ` ${options.firstCharacter ? dictionary[key].split(' ').map(t => t.substring(0, 1)).join(' ') : dictionary[key]}`)
       REGEXP.lastIndex = 0
