@@ -4,7 +4,10 @@
 
 [![Build Status](https://travis-ci.org/zhujun24/chinese-to-pinyin.svg)](https://travis-ci.org/zhujun24/chinese-to-pinyin)
 [![Coverage Status](https://coveralls.io/repos/github/zhujun24/chinese-to-pinyin/badge.svg)](https://coveralls.io/github/zhujun24/chinese-to-pinyin)
+[![Known Vulnerabilities](https://snyk.io//test/github/zhujun24/chinese-to-pinyin/badge.svg?targetFile=package.json)](https://snyk.io//test/github/zhujun24/chinese-to-pinyin?targetFile=package.json)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fzhujun24%2Fchinese-to-pinyin.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fzhujun24%2Fchinese-to-pinyin?ref=badge_shield)
 [![npm package](https://img.shields.io/npm/v/chinese-to-pinyin.svg)](https://www.npmjs.com/package/chinese-to-pinyin)
+
 [![NPM downloads](https://img.shields.io/npm/dm/chinese-to-pinyin.svg)](https://www.npmjs.com/package/chinese-to-pinyin)
 [![Dependency Status](https://david-dm.org/zhujun24/chinese-to-pinyin.svg)](https://www.npmjs.com/package/chinese-to-pinyin)
 [![Dependency Status](https://david-dm.org/zhujun24/chinese-to-pinyin/dev-status.svg)](https://www.npmjs.com/package/chinese-to-pinyin)
