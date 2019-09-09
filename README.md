@@ -1,6 +1,7 @@
 # Chinese-to-Pinyin - 一个将中文翻译成拼音的库,支持多音字
 
 [![npm package](https://nodei.co/npm/chinese-to-pinyin.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/request/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzhujun24%2Fchinese-to-pinyin.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzhujun24%2Fchinese-to-pinyin?ref=badge_shield)
 
 [![Build Status](https://travis-ci.org/zhujun24/chinese-to-pinyin.svg)](https://travis-ci.org/zhujun24/chinese-to-pinyin)
 [![Coverage Status](https://coveralls.io/repos/github/zhujun24/chinese-to-pinyin/badge.svg)](https://coveralls.io/github/zhujun24/chinese-to-pinyin)
@@ -75,3 +76,7 @@ pinyin('1今2天3天4气5真6好aaa', { keepRest: true, firstCharacter: true });
 // 获取中文首字母时，不保留未翻译的非中文字符
 pinyin('1今2天3天4气5真6好aaa', { firstCharacter: true }); // j t t q z h
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fzhujun24%2Fchinese-to-pinyin.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fzhujun24%2Fchinese-to-pinyin?ref=badge_large)
