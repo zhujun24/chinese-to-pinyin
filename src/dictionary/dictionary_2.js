@@ -4000,7 +4000,6 @@ export default {
   遛马: 'liù mǎ',
   披散: 'pī sǎn',
   咋舌: 'zé shé',
-  六路: 'liù lù',
   六个: 'liù ge',
   咋呼: 'zhā hū',
   和洽: 'hé qià',
