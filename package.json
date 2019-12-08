@@ -46,11 +46,11 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
-    "mocha": "^6.2.0",
+    "mocha": "^6.2.2",
     "nyc": "^14.1.1",
     "pre-commit": "^1.2.2",
-    "standard": "^14.1.0",
-    "webpack": "^4.39.3",
-    "webpack-cli": "^3.3.7"
+    "standard": "^14.3.1",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   }
 }
