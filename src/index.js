@@ -1,6 +1,8 @@
 import dictionary from './dictionary'
 import { removeTone, convertToneToNumber } from './utils'
 
+const SPACE = ' '
+const EMPTY = ''
 const REGEXP = /[\u4E00-\u9FA5]/g
 
 const keys = Object.keys(dictionary)
@@ -11,11 +13,11 @@ export default (str, options = {}) => {
     return str
   }
 
-  result = result.join('')
+  result = result.join(EMPTY)
 
   for (const key of keys) {
     if (~result.indexOf(key)) {
-      result = result.replace(new RegExp(key, 'g'), ` ${options.firstCharacter ? dictionary[key].split(' ').map(t => t.substring(0, 1)).join(' ') : dictionary[key]}`)
+      result = result.replace(new RegExp(key, 'g'), `${SPACE}${options.firstCharacter ? dictionary[key].split(SPACE).map(t => t.substring(0, 1)).join(SPACE) : dictionary[key]}`)
       REGEXP.lastIndex = 0
       if (!REGEXP.test(result)) {
         break
@@ -31,9 +33,17 @@ export default (str, options = {}) => {
     result = removeTone(result)
   }
 
-  if (options.keepRest) {
-    result = result.split(' ')
-    result = str.replace(REGEXP, () => ` ${result.shift()} `)
+  if (options.keepRest && options.removeSpace) {
+    result = result.split(SPACE)
+    result = str.replace(REGEXP, () => result.shift())
+  } else if (options.keepRest && !options.removeSpace) {
+    result = result.split(SPACE)
+    result = str.replace(REGEXP, (__match, offset) => {
+      REGEXP.lastIndex = 0
+      return `${REGEXP.test(str[offset - 1]) ? SPACE : EMPTY}${result.shift()}`
+    })
+  } else if (!options.keepRest && options.removeSpace) {
+    result = result.replace(new RegExp(SPACE, 'g'), EMPTY)
   }
 
   return result

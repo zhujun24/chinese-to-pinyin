@@ -1,5 +1,7 @@
 import tones from './tones'
 
+const SPACE = ' '
+
 export const removeTone = str => {
   Object.keys(tones).forEach(key => {
     if (~str.indexOf(key)) {
@@ -10,7 +12,7 @@ export const removeTone = str => {
 }
 
 export const convertToneToNumber = (str, toneToNumberOnly) => {
-  const result = str.split(' ')
+  const result = str.split(SPACE)
   result.forEach((val, index) => {
     let thisKey = 0
     Object.keys(tones).forEach(key => {
@@ -27,5 +29,5 @@ export const convertToneToNumber = (str, toneToNumberOnly) => {
     }
   })
 
-  return result.join(' ')
+  return result.join(SPACE)
 }
